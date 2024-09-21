@@ -12,8 +12,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:video_player/video_player.dart';
 
 
-List<CameraDescription> get _cameras => cameras;
-
 /// Camera example home widget.
 class CameraExampleHome extends StatefulWidget {
   /// Default Constructor
@@ -520,9 +518,9 @@ class _CameraExampleHomeState extends State<CameraExampleHome> with WidgetsBindi
     }
 
     if (_cameras.isEmpty) {
-      SchedulerBinding.instance.addPostFrameCallback((_) async {
-        showInSnackBar('No camera found.');
-      });
+      // SchedulerBinding.instance.addPostFrameCallback((_) async {
+      //   showInSnackBar('No camera found.');
+      // });
       return const Text('None');
     } else {
       for (final CameraDescription cameraDescription in _cameras) {
@@ -969,12 +967,13 @@ class _CameraExampleHomeState extends State<CameraExampleHome> with WidgetsBindi
   void _getAvailableCamera() async{
     try {
       print('Getting available cameras...');
-      cameras = await availableCameras();
-      print('Available cameras: $cameras');
+      _cameras = await availableCameras();
+      setState(() {});
+      print('Available cameras: $_cameras');
     } on CameraException catch (e) {
       _logError(e.code, e.description);
     }
   }
 }
 
-List<CameraDescription> cameras = <CameraDescription>[];
+List<CameraDescription> _cameras = <CameraDescription>[];

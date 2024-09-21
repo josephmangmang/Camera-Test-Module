@@ -40,6 +40,13 @@ class MainActivity : AppCompatActivity() {
                     .build(this)
             )
         }
+        findViewById<Button>(R.id.openFlutterPage).setOnClickListener {
+            startActivity(
+                FlutterActivity
+                    .withCachedEngine(MyApplication.FLUTTER_ENGINE_ID)
+                    .build(this)
+            )
+        }
         setMethodChannelHandler()
     }
 

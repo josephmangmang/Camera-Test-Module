@@ -5,9 +5,6 @@ import 'package:flutter/services.dart';
 
 import 'camera_example.dart';
 
-void _logError(String code, String? message) {
-  print('Error: $code${message == null ? '' : '\nError Message: $message'}');
-}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Flutter Page',
             ),
             Text(
               '$_counter',
@@ -78,9 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             FilledButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CameraExampleHome())).then((_) {
-                    navigateBack();
-                  });
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CameraExampleHome()));
                 },
                 child: const Text('Open Camera')),
           ],
