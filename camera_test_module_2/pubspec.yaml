@@ -1,9 +1,9 @@
 name: camera_test_module
-description: "A new Flutter module project."
+description: "A new Flutter project."
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.3
+  sdk: ^3.5.2
 
 dependencies:
   flutter:
@@ -23,5 +23,5 @@ flutter:
   uses-material-design: true
   module:
     androidX: true
-    androidPackage: com.mt.camera_test_module
-    iosBundleIdentifier: com.mt.cameraTestModule
+    androidPackage: com.example.camera_test_module
+    iosBundleIdentifier: com.example.cameraTestModule

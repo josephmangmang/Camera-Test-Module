@@ -1,6 +1,6 @@
 # camera_test_module
 
-A new Flutter module project.
+A new Flutter project.
 
 ## Getting Started
 
